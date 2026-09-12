@@ -47,7 +47,145 @@ new-rahad-website/
 
 ---
 
-## 4. Development Roadmap
+## 4. Getting Started & How to Run the Project
+
+### Prerequisites
+- **Node.js**: v18.17+ or v20+
+- **Python**: 3.10+
+- **Git**
+
+---
+
+### Step 1: Backend Setup (Django & DRF)
+
+Open a terminal and navigate to the `backend/` directory:
+
+```bash
+cd backend
+```
+
+#### 1. Create and activate a virtual environment
+
+- **Windows (PowerShell):**
+  ```powershell
+  python -m venv venv
+  venv\Scripts\Activate.ps1
+  ```
+  *(If script execution is restricted on Windows PowerShell, run: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` first, or use Command Prompt: `venv\Scripts\activate.bat`)*
+
+- **macOS / Linux:**
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
+
+#### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+#### 3. Environment configuration
+Copy the sample environment file:
+- **Windows (PowerShell):**
+  ```powershell
+  Copy-Item .env.example .env
+  ```
+- **macOS / Linux:**
+  ```bash
+  cp .env.example .env
+  ```
+
+#### 4. Run database migrations
+```bash
+python manage.py migrate
+```
+
+#### 5. Seed initial demo data & create superuser (Optional but Recommended)
+```bash
+# Seed demo categories, products, factory data & settings
+python manage.py seed_demo_data
+
+# Create dev admin user (admin / admin123)
+python manage.py create_dev_admin
+```
+
+#### 6. Start Django backend development server
+```bash
+python manage.py runserver 8000
+```
+- **API Base URL:** `http://127.0.0.1:8000/api/v1/`
+- **Django Admin Panel:** `http://127.0.0.1:8000/admin/`
+
+---
+
+### Step 2: Frontend Setup (Next.js 14)
+
+Open a **new separate terminal** and navigate to the `frontend/` directory:
+
+```bash
+cd frontend
+```
+
+#### 1. Install dependencies
+```bash
+npm install
+```
+
+#### 2. Environment configuration (Optional)
+Copy the environment template:
+- **Windows (PowerShell):**
+  ```powershell
+  Copy-Item .env.example .env.local
+  ```
+- **macOS / Linux:**
+  ```bash
+  cp .env.example .env.local
+  ```
+*(Default points to `NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api/v1`)*
+
+#### 3. Start Next.js development server
+```bash
+npm run dev
+```
+
+Open your browser at:
+**[http://localhost:3000](http://localhost:3000)**
+
+---
+
+### Running from Project Root (Convenience Scripts)
+
+From the project root directory, you can also run:
+```bash
+# Install frontend dependencies from root
+npm --prefix frontend install
+
+# Run frontend dev server
+npm run dev
+
+# Build frontend for production
+npm run build
+```
+
+---
+
+### Vercel Deployment Guide (Frontend)
+
+When deploying this project to [Vercel](https://vercel.com):
+
+1. **Import** the repository `taslimahmedtamim/business-website`.
+2. Under **Root Directory**, click **Edit** and set it to:
+   ```text
+   frontend
+   ```
+3. Vercel will automatically detect **Next.js** as the framework preset.
+4. *(Optional)* Add the environment variable:
+   - `NEXT_PUBLIC_API_URL`: Your live Django backend URL (e.g. `https://api.yourdomain.com/api/v1`)
+5. Click **Deploy**.
+
+---
+
+## 5. Development Roadmap
 
 - [x] **Phase 1**: Architecture & Master Specification
 - [x] **Phase 2**: Project Initialization & Environment Templates
