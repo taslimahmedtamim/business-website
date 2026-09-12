@@ -24,8 +24,9 @@ async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T |
         'Accept': 'application/json',
         ...(options?.headers || {}),
       },
-      next: process.env.NODE_ENV === 'development' ? { revalidate: 0 } : { revalidate: 60 },
-      cache: process.env.NODE_ENV === 'development' ? 'no-store' : 'default',
+      ...(process.env.NODE_ENV === 'development'
+        ? { cache: 'no-store' }
+        : { next: { revalidate: 60 } }),
     });
 
     if (!res.ok) {
