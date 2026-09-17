@@ -185,24 +185,3 @@ When deploying this project to [Vercel](https://vercel.com):
 
 ---
 
-## 5. Development Roadmap
-
-- [x] **Phase 1**: Architecture & Master Specification
-- [x] **Phase 2**: Project Initialization & Environment Templates
-- [x] **Phase 3**: Django Backend Setup, DRF, CORS, Storage Engine
-- [x] **Phase 4**: Database Models, Migrations & Demo Seed Data
-- [x] **Phase 5**: DRF Serializers, ViewSets, Filters & Search APIs
-- [x] **Phase 6**: Custom Django Admin Management Suite
-- [x] **Phase 7**: Next.js App Router & Tailwind CSS Foundation
-- [x] **Phase 8**: Design System, Typography & Global Layouts
-- [x] **Phase 9**: Homepage (Manufacturing-First Storytelling)
-- [x] **Phase 10**: Product Catalogue Page
-- [x] **Phase 11**: Dynamic Product Details Page & WhatsApp Inquiry
-- [x] **Phase 12**: Factory & Manufacturing Workflow Showcase
-- [x] **Phase 13**: Showroom & Photo Gallery with Lightbox
-- [x] **Phase 14**: Contact Page with Google Maps & Inquiry Form
-- [x] **Phase 15**: Dynamic SEO, OpenGraph Metadata & Sitemap
-- [x] **Phase 16**: Performance Optimization & Accessibility Audit
-- [x] **Phase 17**: Modern Video-Style Showcase, Demo Media, CMS Sync & Bug Fixes
-- [ ] **Phase 18**: Free/Low-Cost Cloud Deployment (Vercel + Render + Neon)
-- [ ] **Phase 19**: Hostinger Production Deployment & Packaging
